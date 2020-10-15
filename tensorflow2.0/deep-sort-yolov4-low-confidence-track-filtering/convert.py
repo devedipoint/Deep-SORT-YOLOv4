@@ -111,7 +111,7 @@ class Yolo4(object):
                 conv_bias = np.ndarray(
                     shape=(filters, ),
                     dtype='float32',
-                    buffer=weights_file.read(filters * 4))
+                    buffer=weights_file.read(filters * 64)) # was 4
                 bn_weights = np.ndarray(
                     shape=(3, filters),
                     dtype='float32',
