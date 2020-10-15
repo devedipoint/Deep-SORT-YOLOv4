@@ -128,7 +128,7 @@ class Yolo4(object):
                 conv_weights = np.ndarray(
                     shape=darknet_w_shape,
                     dtype='float32',
-                    buffer=weights_file.read(weights_size * 4))
+                    buffer=weights_file.read(weights_size * 8))
                 conv_weights = np.transpose(conv_weights, [2, 3, 1, 0])
                 self.yolo4_model.layers[convs_sorted[i][1]].set_weights([conv_weights])
 
