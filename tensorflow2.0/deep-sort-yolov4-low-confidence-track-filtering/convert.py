@@ -111,7 +111,7 @@ class Yolo4(object):
                 conv_bias = np.ndarray(
                     shape=(filters, ),
                     dtype='float32',
-                    buffer=weights_file.read(filters * 64)) # was 4
+                    buffer=weights_file.read(filters * 4)) # was 4
                 bn_weights = np.ndarray(
                     shape=(3, filters),
                     dtype='float32',
@@ -128,7 +128,7 @@ class Yolo4(object):
                 conv_weights = np.ndarray(
                     shape=darknet_w_shape,
                     dtype='float32',
-                    buffer=weights_file.read(weights_size * 64)) # was 4
+                    buffer=weights_file.read(weights_size * 4)) # was 4
                 conv_weights = np.transpose(conv_weights, [2, 3, 1, 0])
                 self.yolo4_model.layers[convs_sorted[i][1]].set_weights([conv_weights])
 
